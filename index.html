@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropProphet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="logo3.jpg"/>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a href="index.html" class="navbar-brand">
+              <img src="logo3.jpg" height="28" alt="Logo">
+            </a>
+            <a class="navbar-brand" href="index.html">CropProphet</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#cropRecommendation">Crop Recommendation Prediction</a></li>
+              <li><a href="#cropProduction">Crop Production Prediction</a></li>
+              <li><a href="hindi.html">भाषा: हिन्दी</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- Navbar Ends-->
+
+    <!-- Jumbotron -->
+    <div class="container">
+        <div class="jumbotron">
+          <h1>CropProphet</h1>      
+          <p>Predict your crop and total production according to your soil, climate and region using Machine Learning.</p>
+        </div>
+    </div>
+    <!-- Jumbotron Ends -->
+
+    <!-- Carousel -->
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="https://wallpapercave.com/wp/wp1886331.jpg" alt="Carousel 1" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="https://wallpapercave.com/wp/wp3471778.jpg" alt="Carousel 2" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="https://www.israel21c.org/wp-content/uploads/2017/06/shutterstock_precisionag.jpg" alt="Carousel 3" style="width:100%;">
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+    <!-- Carousel Ends -->
+    <br>
+      
+    <!-- About -->
+    <div class="container" id="about">
+      <div class="jumbotron">
+        <h2>About</h2>      
+        <p>
+          Today, with almost the entire economy being sustained by agriculture, which is the mainstay of the villages. 
+          It contributes 16% of the overall GDP and accounts for employment of approximately 52% of the Indian population. 
+          Rapid growth in agriculture is essential not only for self-reliance but also to earn valuable foreign exchange. 
+          Indian farmers are second to none in production and productivity despite of the fact that millions are marginal and small farmers. 
+          They adopt improved agriculture technology as efficiently as farmers in developed countries.
+          Farmers get to know best crop which gives more profit to them using Machine Learning.
+        </p>
+        <!-- Modal -->
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Know More</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">India GDP From Agriculture</h4>
+              </div>
+              <div class="modal-body">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                      <th style="text-align: left; padding-left: 10px; text-transform: capitalize">
+                          India GDP
+                      </th>
+                      <th>
+                          Last</th>
+                      <th>
+                          Previous</th>
+                      <th>
+                          Highest</th>
+                      <th>
+                          Lowest</th>
+                       
+                      <th>
+                          Unit</th>
+                      <th></th>
+                  </tr>
+                      </thead>
+          
+              <tbody>
+                <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;"><p>GDP Growth Rate</p></td>
+                  <td>2.10</td>
+                  <td>9.30</td>
+                  <td>23.10</td>
+                  <td>-25.90</td>
+                  <td><small></small>percent</small></td>
+                </tr>
+          
+                <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                  <p>GDP Annual Growth Rate</p>
+                  </td>
+                  <td>1.60</td>
+                  <td>0.50</td>
+                  <td>11.40</td>
+                  <td>-24.40</td>
+                  
+                  <td>
+                      <small>
+                          percent</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>GDP</p>
+                  </td>
+                  <td>2622.98</td>
+                  <td>2870.50</td>
+                  <td>2870.50</td>
+                  <td>37.03</td>
+                  
+                  <td>
+                      <small>
+                          USD Billion</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>GDP Constant Prices</p>
+                  </td>
+                  <td>38963.35</td>
+                  <td>36242.66</td>
+                  <td>38963.35</td>
+                  <td>7500.43</td>
+                  
+                  <td>
+                      <small>
+                          INR Billion</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>Gross National Product</p>
+                  </td>
+                  <td>13280223.00</td>
+                  <td>14522931.00</td>
+                  <td>14522931.00</td>
+                  <td>8659505.00</td>
+                  
+                  <td>
+                      <small>
+                          INR Tens Of Million</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>Gross Fixed Capital Formation</p>
+                  </td>
+                  <td>13382.27</td>
+                  <td>11939.93</td>
+                  <td>13382.27</td>
+                  <td>2021.90</td>
+                  
+                  <td>
+                      <small>
+                          INR Billion</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>GDP per capita</p>
+                  </td>
+                  <td>1961.30</td>
+                  <td>2152.22</td>
+                  <td>2152.22</td>
+                  <td>330.21</td>
+                  
+                  <td>
+                      <small>
+                          USD</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>GDP per capita PPP</p>
+                  </td>
+                  <td>6118.36</td>
+                  <td>6713.93</td>
+                  <td>6713.93</td>
+                  <td>1795.30</td>
+                  
+                  <td>
+                      <small>
+                          USD</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>GDP From Agriculture</p>
+                  </td>
+                  <td>5445.03</td>
+                  <td>6401.91</td>
+                  <td>6401.91</td>
+                  <td>2690.74</td>
+                  
+                  <td>
+                      <small>
+                          INR Billion</small></td>
+              </tr>
+          
+              
+              </tbody>
+            </table>
+          
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- Modal Ends -->
+      </div>
+    </div>
+    <!-- About Ends -->
+
+    <!-- Crop Recommendation -->
+    <div  id="cropRecommendation"class="container">
+      <div class="jumbotron">
+        <h2>Crop Recommendation</h2>      
+          
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Essential Nutrients</h2>
+                <p class="card-text">Nitrogen (N), phosphorous (P), and potassium (K) are the three main nutrients that are conventionally supplied by inorganic fertilizers.</p>
+                
+                <!-- Button to Open the Modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                        Know More
+                      </button>
+
+                      <!-- The Modal -->
+                      <div class="modal" id="myModal1">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h2 class="modal-title">SOIL TEST PARAMETERS / NUTRIENTS</h2>
+                              <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              1.Ratio of soil to extractant <br>
+                              2.Shaking time, action and speed <br>
+                              3.Overall techniques used in the lab <br>
+                              4.Cut-off" levels for high test results <br>
+                              5.Nitrogen ,Phosphorus,Sulphur <br>
+                              6.FERTILIZER PLACEMENT <br>
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <a href="https://soilhealth.dac.gov.in/NewHomePage/StateWiseNPKChart" class="btn btn-primary" target="_blank">Get Your Soil Health Card</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Temperature</h2>
+                <p class="card-text">Temperature increase reduces global yields of major crops in four independent estimates 1.Significance,2.Abstract,3.Results and Discussion</p>
+                
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                  Know More
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal2">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p>
+                          Regardless of how favourable light and moisture conditions may be, plant growth ceases when the air and leaf temperature drops below a certain minimum or exceeds a certain maximum value. <br>
+                           Between these limits, there is an optimum temperature at which growth proceeds with greatest rapidity. <br>
+                            These three temperature points are the cardinal temperatures for a given plant; the cardinal temperatures are known for most plant species, at least approximately. <br>
+                             Cool-season crops (oats, rye, wheat, and barley) have low cardinal temperatures: minimum 32° to 41° F (0° to 5° C), optimum 77° to 88° F (25° το 31° C), and maximum 88° το 99° F (31° to 37° C). <br>
+                              For hot-season crops, such as melons and sorghum, the span of cardinal temperatures is much higher. <br>
+                               The cardinal temperatures may vary with stage of development. <br>
+                                For example, cold treatment near 32° F (0° C) of germinated seeds before sowing can transform winter rye into the spring type; such treatment, called vernalization, has practical application in cold-climate plants.
+                        </p>
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.weather-forecast.com/" class="btn btn-primary" target="_blank">Know Your Temperature</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Rainfall</h2>
+                <p class="card-text">An individual farmer considers that effective rainfall is that quantity which is useful in raising crops planted on his soil. </p>
+                
+                <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+                      Know More
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal3">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <table width="457" border="0" cellspacing="1" cellpadding="3" bgcolor="#dfdfdf">
+                              <tbody><tr bgcolor="#f9f1ed"> 
+                                <td width="25" class="Heading" bgcolor="#f9f1ed"> 
+                                  <div align="center">Sl. No.</div>
+                                </td>
+                                <td class="Heading" width="154" bgcolor="#f9f1ed"> 
+                                  <div align="center">State</div>
+                                </td>
+                                <td class="Heading" width="201"> 
+                                  <div align="center">Meteorological Divisions</div>
+                                </td>
+                                <td class="Heading" width="77"> 
+                                  <div align="center">Average annual <br>
+                                    rainfall (mm)</div>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">1.</td>
+                                <td width="154" class="commontext">Andaman and Nicobar Islands</td>
+                                <td width="201" class="commontext">Andaman and Nicobar Islands</td>
+                                <td width="77" class="commontext">2,967</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">2.</td>
+                                <td width="154" class="commontext">Arunachal Pradesh</td>
+                                <td width="201" class="commontext">Arunachal Pradesh</td>
+                                <td width="77" class="commontext">2,782</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">3.</td>
+                                <td width="154" class="commontext">Assam</td>
+                                <td width="201" class="commontext">Assam and Meghalaya</td>
+                                <td width="77" class="commontext">2,818</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">4.</td>
+                                <td width="154" class="commontext">Meghalaya</td>
+                                <td width="201" class="commontext">Assam and Meghalaya</td>
+                                <td width="77" class="commontext">2,818</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">5.</td>
+                                <td width="154" class="commontext">Nagaland</td>
+                                <td width="201" class="commontext">Nagaland, Manipur, Mizoram and Tripura</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">6.</td>
+                                <td width="154" class="commontext">Manipur</td>
+                                <td width="201" class="commontext">Nagaland, Manipur, Mizoram and Tripura</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">7.</td>
+                                <td width="154" class="commontext">Mizoram</td>
+                                <td width="201" class="commontext">Nagaland, Manipur, Mizoram and Tripura</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">8.</td>
+                                <td width="154" class="commontext">Tripura</td>
+                                <td width="201" class="commontext">Nagaland, Manipur, Mizoram and Tripura</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">9.</td>
+                                <td width="154" class="commontext">West Bengal</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Sub-Himalayan West Bengal and Sikkim<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Gangetic 
+                                  West Bengal</td>
+                                <td width="77" class="commontext"> 
+                                  <p>2,739</p>
+                                  <p>1,439</p>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">10.</td>
+                                <td width="154" class="commontext">Sikkim</td>
+                                <td width="201" class="commontext"> Sub-Himalayan West Bengal and Sikkim</td>
+                                <td width="77" class="commontext">2,739</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">11.</td>
+                                <td width="154" class="commontext">Orissa</td>
+                                <td width="201" class="commontext">Orissa</td>
+                                <td width="77" class="commontext">1,489</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">12.</td>
+                                <td width="154" class="commontext">Bihar</td>
+                                <td width="201" class="commontext"> 
+                                  <span class="bullet"><font color="#000000">n</font></span> Bihar 
+                                    Plateau<br>
+                                    <span class="bullet"><font color="#000000">n</font></span> Bihar 
+                                    Plains          </td>
+                                <td width="77" class="commontext"> 
+                                  <p>1,326<br>
+                                    1,186</p>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">13.</td>
+                                <td width="154" class="commontext">Uttar Pradesh</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Uttar Pradesh<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Plain of 
+                                  West Uttar Pradesh<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Hills of 
+                                  West Uttar Pradesh</td>
+                                <td width="77" class="commontext">1,025<br>
+                                  896<br>
+                                  1,667</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">14.</td>
+                                <td width="154" class="commontext">Haryana</td>
+                                <td width="201" class="commontext">Haryana, Chandigarh and Delhi</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">15.</td>
+                                <td width="154" class="commontext">Delhi</td>
+                                <td width="201" class="commontext">Haryana, Chandigarh and Delhi</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">16.</td>
+                                <td width="154" class="commontext">Chandigarh</td>
+                                <td width="201" class="commontext">Haryana, Chandigarh and Delhi</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">17.</td>
+                                <td width="154" class="commontext">Punjab</td>
+                                <td width="201" class="commontext">Punjab</td>
+                                <td width="77" class="commontext">649</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">18.</td>
+                                <td width="154" class="commontext">Himachal Pradesh</td>
+                                <td width="201" class="commontext">Himachal Pradesh</td>
+                                <td width="77" class="commontext">1,251</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">19.</td>
+                                <td width="154" class="commontext">Jammu and Kashmir</td>
+                                <td width="201" class="commontext">Jammu and Kashmir</td>
+                                <td width="77" class="commontext">1,011</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">20.</td>
+                                <td width="154" class="commontext">Rajasthan</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  West Rajasthan<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> East Rajasthan</td>
+                                <td width="77" class="commontext">313<br>
+                                  675</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">21.</td>
+                                <td width="154" class="commontext">Madhya Pradesh</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Madhya Pradesh<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> East Madhya 
+                                  Pradesh</td>
+                                <td width="77" class="commontext">1,017<br>
+                                  1,338</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">22.</td>
+                                <td width="154" class="commontext">Gujarat</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Gujarat region<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Saurashtra 
+                                  and Kachchh</td>
+                                <td width="77" class="commontext">1,107<br>
+                                  578</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">23.</td>
+                                <td width="154" class="commontext">Goa</td>
+                                <td width="201" class="commontext">Konkan and Goa</td>
+                                <td width="77" class="commontext">3,005</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">24.</td>
+                                <td width="154" class="commontext">Maharashtra</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Konkan and Goa<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Madhya 
+                                  Maharashtra<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Marathwada<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Vidarbha</td>
+                                <td width="77" class="commontext">3,005<br>
+                                  901<br>
+                                  882<br>
+                                  1,034</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">25.</td>
+                                <td width="154" class="commontext">Andhra Pradesh</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Coastal Andhra Pradesh<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Telengana<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Rayalaseema</td>
+                                <td width="77" class="commontext">1,094<br>
+                                  961<br>
+                                  680</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">26.</td>
+                                <td width="154" class="commontext">Tamil Nadu</td>
+                                <td width="201" class="commontext">Tamil Nadu and Pondicherry</td>
+                                <td width="77" class="commontext">998</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">27.</td>
+                                <td width="154" class="commontext">Pondicherry</td>
+                                <td width="201" class="commontext">Tamil Nadu and Pondicherry</td>
+                                <td width="77" class="commontext">998</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">28.</td>
+                                <td width="154" class="commontext">Karnataka</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                  Coastal Karnataka<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> North Interior 
+                                  Karnataka<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> South Interior 
+                                  Karnataka</td>
+                                <td width="77" class="commontext">3,456<br>
+                                  731<br>
+                                  1,126</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">29.</td>
+                                <td width="154" class="commontext">Kerala</td>
+                                <td width="201" class="commontext">Kerala</td>
+                                <td width="77" class="commontext">3,055</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">30.</td>
+                                <td width="154" class="commontext">Lakshadweep</td>
+                                <td width="201" class="commontext">Lakshadweep</td>
+                                <td width="77" class="commontext">1,515</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                <a href="https://mausam.imd.gov.in/imd_latest/contents/index_category.php" class="btn btn-primary" target="_blank">Know Your Rainfall</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <center>
+          <embed type="text/html" src="https://croprecommendapp.eu-gb.mybluemix.net/ui/#!/0?socketid=LUK5lw-W1WkRX2VrAAA1" width="500" height="600">
+        </center>
+        
+      </div>
+    </div>
+    <!-- Crop Recommendation Ends-->
+
+    <!-- Crop Production  -->
+    <div id="cropProduction" class="container">
+      <div class="jumbotron">
+        <h2>Crop Production Prediction</h2>      
+          
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Crop Productivity</h2>
+                <p class="card-text">Calculate your total crop production.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Area</h2>
+                <p class="card-text">Gross Cropped Area: This represents the total area sown once and/or more than once in a particular year, i.e. the area is counted as many times as there are sowings in a year</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Farming Season</h2>
+                <p class="card-text">Tenure for which crop is produced.</p>
+                
+                <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+                      Know More
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal4">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h2>Farming Season</h2>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <ol>
+                              <li>
+                                Kharif <br>
+                                Sowing in June-October <br>
+                                Harvest in September-October
+                              </li>
+
+                              <li>
+                                Rabi <br>
+                                Sowing in October-November <br>
+                                Harvest in February-April
+                              </li>
+                            </ol>
+
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <center>
+          <embed type="text/html" src="https://node-red-noddg-2021-08-13.eu-gb.mybluemix.net/ui/#!/0?socketid=U6pPVQqzBWmb-nRfAAAO" width="500" height="500">
+        </center>
+        
+      </div>
+    </div>
+    <!-- Crop Production  -->
+    
+    <!-- Contact -->
+    <div id="contact" class="container">
+      <div class="jumbotron">
+        <center><h2>Contact</h2></center>
+        <section class="w31-simple-contact-form1">
+          <div class="contact-form section-gap">
+            <div class="wrapper">
+              <div class="contact-form" style="max-width: 450px; margin:0 auto;">
+                <div class="form-mid">
+                  <form action="javascript:sendmail()" method="POST">
+                    <div class="FIELD">
+                      <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="">
+                    </div>
+  
+                    <div class="FIELD">
+                      <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email" required="">
+                    </div>
+  
+                    <div class="FIELD">
+                      <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject" required="">
+                    </div>
+  
+                      <textarea name="Message" class="form-control" name="Message" id="Message" placeholder="Message" required=""></textarea>
+                      <button type="submit" class="btn btn-contact bg-success">Send Message</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Contact -->
+
+    <!-- footer -->
+    <nav class="navbar navbar-inverse fixed-bottom">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <p class="navbar-text">© Team Venom : Hack Challenge 2021 IBM-SmartInternz</p>
+    </nav>
+</body>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendmail(){
+    var name = $('#Name').val();
+    var email = $('#Sender').val();
+    var subject = $('#Subject').val();
+    var message = $('#Message').val();
+
+    var Body = 'Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+  }
+  Email.send({
+    Host : "smtp.gmail.com",
+    Username : "SI2021IBM04489@smartinternz.com",
+    Password : "SIIBM2021Uc45",
+    To : 'onkarcharkupalli@gmail.com',
+    From : "SI2021IBM04489@smartinternz.com",
+    Subject : "New Mail On Contact Form From "+name,
+    Body : Body
+}).then(
+  message => {
+    if(message == 'OK'){
+      alert("Your Email Has Been Sent.");
+    }else{
+      alert("Error in sending email.");
+    }
+  }
+);
+</script>
+</html>

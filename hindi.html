@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropProphet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="logo3.jpg"/>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a href="index.html" class="navbar-brand">
+              <img src="logo3.jpg" height="28" alt="Logo">
+            </a>
+            <a class="navbar-brand" href="index.html">CropProphet</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">विषय</a></li>
+              <li><a href="#cropRecommendation">फसल सिफारिश</a></li>
+              <li><a href="#cropProduction">फसल उत्पादन</a></li>
+              <li><a href="index.html">Change Language To English</a></li>
+              <li><a href="#contact">संपर्क</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- Navbar Ends-->
+
+    <!-- Jumbotron -->
+    <div class="container">
+        <div class="jumbotron">
+          <h1>CropProphet</h1>      
+          <p>मशीन लर्निंग का उपयोग करके अपनी मिट्टी, जलवायु और क्षेत्र के अनुसार अपनी फसल और कुल उत्पादन की भविष्यवाणी करें।</p>
+        </div>
+    </div>
+    <!-- Jumbotron Ends -->
+
+    <!-- Carousel -->
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="https://wallpapercave.com/wp/wp1886331.jpg" alt="Carousel 1" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="https://wallpapercave.com/wp/wp3471778.jpg" alt="Carousel 2" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="https://www.israel21c.org/wp-content/uploads/2017/06/shutterstock_precisionag.jpg" alt="Carousel 3" style="width:100%;">
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+    <!-- Carousel Ends -->
+    <br>
+      
+    <!-- About -->
+    <div class="container" id="about">
+      <div class="jumbotron">
+        <h2>विषय</h2>      
+        <p>
+            आज, लगभग पूरी अर्थव्यवस्था कृषि पर टिकी हुई है, जो कि गांवों का मुख्य आधार है।
+            यह समग्र सकल घरेलू उत्पाद का 16% योगदान देता है और भारतीय आबादी का लगभग 52% रोजगार देता है।
+            न केवल आत्मनिर्भरता के लिए बल्कि मूल्यवान विदेशी मुद्रा अर्जित करने के लिए भी कृषि में तीव्र वृद्धि आवश्यक है।
+            लाखों सीमांत और छोटे किसान होने के बावजूद भारतीय किसान उत्पादन और उत्पादकता में किसी से पीछे नहीं हैं।
+            वे विकसित देशों में किसानों की तरह ही उन्नत कृषि प्रौद्योगिकी को कुशलता से अपनाते हैं।
+            मशीन लर्निंग का उपयोग करके किसानों को सबसे अच्छी फसल का पता चलता है जो उन्हें अधिक लाभ देता है।
+        </p>
+        <!-- Modal -->
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Know More</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">कृषि से भारत जीडीपी</h4>
+              </div>
+              <div class="modal-body">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                      <th style="text-align: left; padding-left: 10px; text-transform: capitalize">
+                        भारत जीडीपी
+                      </th>
+                      <th>
+                        अंतिम</th>
+                      <th>
+                        पूर्व</th>
+                      <th>
+                        Highest</th>
+                      <th>
+                        निम्नतम</th>
+                       
+                      <th>
+                        मात्रक</th>
+                      <th></th>
+                  </tr>
+                      </thead>
+          
+              <tbody>
+                <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;"><p>जीडीपी विकास दर</p></td>
+                  <td>2.10</td>
+                  <td>9.30</td>
+                  <td>23.10</td>
+                  <td>-25.90</td>
+                  <td><small></small>%</small></td>
+                </tr>
+          
+                <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                  <p>जीडीपी वार्षिक विकास दर</p>
+                  </td>
+                  <td>1.60</td>
+                  <td>0.50</td>
+                  <td>11.40</td>
+                  <td>-24.40</td>
+                  
+                  <td>
+                      <small>
+                          %</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>जीडीपी</p>
+                  </td>
+                  <td>2622.98</td>
+                  <td>2870.50</td>
+                  <td>2870.50</td>
+                  <td>37.03</td>
+                  
+                  <td>
+                      <small>
+                        यूएसडी बिलियन</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>जीडीपी स्थिर कीमतें</p>
+                  </td>
+                  <td>38963.35</td>
+                  <td>36242.66</td>
+                  <td>38963.35</td>
+                  <td>7500.43</td>
+                  
+                  <td>
+                      <small>
+                        आईएनआर बिलियन</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>सकल राष्ट्रीय उत्पाद</p>
+                  </td>
+                  <td>13280223.00</td>
+                  <td>14522931.00</td>
+                  <td>14522931.00</td>
+                  <td>8659505.00</td>
+                  
+                  <td>
+                      <small>
+                        आईएनआर दसियों मिलियन </small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>कुल निश्चित पूंजी निर्माण</p>
+                  </td>
+                  <td>13382.27</td>
+                  <td>11939.93</td>
+                  <td>13382.27</td>
+                  <td>2021.90</td>
+                  
+                  <td>
+                      <small>
+                        आईएनआर बिलियन</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>प्रति व्यक्ति जी डी पी</p>
+                  </td>
+                  <td>1961.30</td>
+                  <td>2152.22</td>
+                  <td>2152.22</td>
+                  <td>330.21</td>
+                  
+                  <td>
+                      <small>
+                          USD</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>जीडीपी प्रति व्यक्ति पीपीपी</p>
+                  </td>
+                  <td>6118.36</td>
+                  <td>6713.93</td>
+                  <td>6713.93</td>
+                  <td>1795.30</td>
+                  
+                  <td>
+                      <small>
+                          USD</small></td>
+              </tr>
+          
+              <tr>
+                  <td class="datatable-item-first" style="padding-left: 10px; text-align: left;">
+                      <p>कृषि से सकल घरेलू उत्पाद</p>
+                  </td>
+                  <td>5445.03</td>
+                  <td>6401.91</td>
+                  <td>6401.91</td>
+                  <td>2690.74</td>
+                  
+                  <td>
+                      <small>
+                          INR Billion</small></td>
+              </tr>
+          
+              
+              </tbody>
+            </table>
+          
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- Modal Ends -->
+      </div>
+    </div>
+    <!-- About Ends -->
+
+    <!-- Crop Recommendation -->
+    <div  id="cropRecommendation"class="container">
+      <div class="jumbotron">
+        <h2>फसल की सिफारिश</h2>      
+          
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">ज़रूरी पोषक तत्व</h2>
+                <p class="card-text">नाइट्रोजन (एन), फॉस्फोरस (पी), और पोटेशियम (के) तीन मुख्य पोषक तत्व हैं जो परंपरागत रूप से अकार्बनिक उर्वरकों द्वारा आपूर्ति की जाती हैं।</p>
+                
+                <!-- Button to Open the Modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                        अधिक जानिए
+                      </button>
+
+                      <!-- The Modal -->
+                      <div class="modal" id="myModal1">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h2 class="modal-title">मृदा परीक्षण पैरामीटर / पोषक तत्व</h2>
+                              <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                1. मिट्टी से निकालने वाले का अनुपात <br>
+                              2. मिलाते हुए समय, क्रिया और गति <br>
+                              3.प्रयोगशाला में उपयोग की जाने वाली समग्र तकनीक <br>
+                              उच्च परीक्षा परिणामों के लिए कट-ऑफ" स्तर <br>
+                              5. नाइट्रोजन, फास्फोरस, सल्फर <br>
+                              6. उर्वरक प्लेसमेंट
+                               <br>
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <a href="https://soilhealth.dac.gov.in/NewHomePage/StateWiseNPKChart" class="btn btn-primary" target="_blank">Get Your Soil Health Card</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">तापमान</h2>
+                <p class="card-text">तापमान वृद्धि चार स्वतंत्र अनुमानों में प्रमुख फसलों की वैश्विक पैदावार को कम करती है 1. महत्व, 2. सार, 3. परिणाम और चर्चा</p>
+                
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                    अधिक जानिए
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal2">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p>
+                            प्रकाश और नमी की स्थिति कितनी भी अनुकूल क्यों न हो, पौधों की वृद्धि रुक ​​जाती है जब हवा और पत्ती का तापमान एक निश्चित न्यूनतम से नीचे चला जाता है या एक निश्चित अधिकतम मूल्य से अधिक हो जाता है। <br>
+                            इन सीमाओं के बीच, एक इष्टतम तापमान होता है जिस पर विकास सबसे तेज गति से आगे बढ़ता है। <br>
+                             ये तीन तापमान बिंदु किसी दिए गए पौधे के लिए मुख्य तापमान हैं; कार्डिनल तापमान अधिकांश पौधों की प्रजातियों के लिए जाना जाता है, कम से कम लगभग। <br>
+                              ठंड के मौसम की फसलों (जई, राई, गेहूं और जौ) में निम्न कार्डिनल तापमान होता है: न्यूनतम 32° से 41° F (0° से 5° C), इष्टतम 77° से 88° F (25° το 31° C) , और अधिकतम 88° 99° F (31° से 37° C)। <br>
+                               गर्म मौसम की फसलों, जैसे खरबूजे और ज्वार के लिए, कार्डिनल तापमान की अवधि बहुत अधिक होती है। <br>
+                                विकास के चरण के साथ कार्डिनल तापमान भिन्न हो सकते हैं। <br>
+                                 उदाहरण के लिए, बुवाई से पहले अंकुरित बीजों के 32° F (0° C) के पास ठंडा उपचार सर्दियों की राई को वसंत प्रकार में बदल सकता है; इस तरह के उपचार, जिसे वैश्वीकरण कहा जाता है, का ठंडे जलवायु वाले पौधों में व्यावहारिक अनुप्रयोग है।
+                        </p>
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <a href="https://www.weather-forecast.com/" class="btn btn-primary" target="_blank">Know Your Temperature</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">वर्षा</h2>
+                <p class="card-text">एक व्यक्तिगत किसान मानता है कि प्रभावी वर्षा वह मात्रा है जो उसकी मिट्टी पर लगाए गए फसलों को उगाने में उपयोगी होती है।</p>
+                
+                <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+                        अधिक जानिए
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal3">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <table width="457" border="0" cellspacing="1" cellpadding="3" bgcolor="#dfdfdf">
+                              <tbody><tr bgcolor="#f9f1ed"> 
+                                <td width="25" class="Heading" bgcolor="#f9f1ed"> 
+                                  <div align="center">क्रम संख्या</div>
+                                </td>
+                                <td class="Heading" width="154" bgcolor="#f9f1ed"> 
+                                  <div align="center">राज्य</div>
+                                </td>
+                                <td class="Heading" width="201"> 
+                                  <div align="center">मौसम विभाग</div>
+                                </td>
+                                <td class="Heading" width="77"> 
+                                  <div align="center">वार्षिक औसत <br>
+                                    वर्षा (mm)</div>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">1.</td>
+                                <td width="154" class="commontext">अंडमान व नोकोबार द्वीप समूह</td>
+                                <td width="201" class="commontext">अंडमान व नोकोबार द्वीप समूह</td>
+                                <td width="77" class="commontext">2,967</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">2.</td>
+                                <td width="154" class="commontext">अरुणाचल प्रदेश</td>
+                                <td width="201" class="commontext">अरुणाचल प्रदेश</td>
+                                <td width="77" class="commontext">2,782</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">3.</td>
+                                <td width="154" class="commontext">असम</td>
+                                <td width="201" class="commontext">असम</td>
+                                <td width="77" class="commontext">2,818</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">4.</td>
+                                <td width="154" class="commontext">मेघालय</td>
+                                <td width="201" class="commontext">मेघालय</td>
+                                <td width="77" class="commontext">2,818</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">5.</td>
+                                <td width="154" class="commontext">नगालैंड</td>
+                                <td width="201" class="commontext">नगालैंड</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">6.</td>
+                                <td width="154" class="commontext">मणिपुर</td>
+                                <td width="201" class="commontext">मणिपुर</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">7.</td>
+                                <td width="154" class="commontext">मिजोरम</td>
+                                <td width="201" class="commontext">मिजोरम</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">8.</td>
+                                <td width="154" class="commontext">त्रिपुरा</td>
+                                <td width="201" class="commontext">त्रिपुरा</td>
+                                <td width="77" class="commontext">1,881</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">9.</td>
+                                <td width="154" class="commontext">पश्चिम बंगाल</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                    पश्चिम बंगाल<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> </td>गंगा
+                                  पश्चिम बंगाल
+                                <td width="77" class="commontext"> 
+                                  <p>2,739</p>
+                                  <p>1,439</p>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">10.</td>
+                                <td width="154" class="commontext">सिक्किम</td>
+                                <td width="201" class="commontext">उप-हिमालयी पश्चिम बंगाल और सिक्किम </td>
+                                <td width="77" class="commontext">2,739</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">11.</td>
+                                <td width="154" class="commontext">ओडिशा</td>
+                                <td width="201" class="commontext">ओडिशा</td>
+                                <td width="77" class="commontext">1,489</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">12.</td>
+                                <td width="154" class="commontext">बिहार</td>
+                                <td width="201" class="commontext"> 
+                                  <span class="bullet"><font color="#000000">n</font></span>बिहार पठार<br>
+                                    <span class="bullet"><font color="#000000">n</font></span>बिहार
+                                    मैदानों</td>
+                                <td width="77" class="commontext"> 
+                                  <p>1,326<br>
+                                    1,186</p>
+                                </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">13.</td>
+                                <td width="154" class="commontext">उत्तर प्रदेश</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                    उत्तर प्रदेश<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Plain of 
+                                  उत्तर प्रदेश<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> Hills of 
+                                  उत्तर प्रदेश</td>
+                                <td width="77" class="commontext">1,025<br>
+                                  896<br>
+                                  1,667</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">14.</td>
+                                <td width="154" class="commontext">हरियाणा</td>
+                                <td width="201" class="commontext">हरियाणा</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">15.</td>
+                                <td width="154" class="commontext">दिल्ली</td>
+                                <td width="201" class="commontext">दिल्ली</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">16.</td>
+                                <td width="154" class="commontext">चंडीगढ़</td>
+                                <td width="201" class="commontext">चंडीगढ़</td>
+                                <td width="77" class="commontext">617</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">17.</td>
+                                <td width="154" class="commontext">पंजाब</td>
+                                <td width="201" class="commontext">पंजाब</td>
+                                <td width="77" class="commontext">649</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">18.</td>
+                                <td width="154" class="commontext">हिमाचल प्रदेश</td>
+                                <td width="201" class="commontext">हिमाचल प्रदेश</td>
+                                <td width="77" class="commontext">1,251</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">19.</td>
+                                <td width="154" class="commontext">जम्मू और कश्मीर</td>
+                                <td width="201" class="commontext">जम्मू और कश्मीर</td>
+                                <td width="77" class="commontext">1,011</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">20.</td>
+                                <td width="154" class="commontext">राजस्थान</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                    राजस्थान<br>
+                                  <span class="bullet"><font color="#000000">n</font></span>राजस्थान</td>
+                                <td width="77" class="commontext">313<br>
+                                  675</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">21.</td>
+                                <td width="154" class="commontext">मध्य प्रदेश</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> मध्य प्रदेश<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> मध्य प्रदेश</td>
+                                <td width="77" class="commontext">1,017<br>
+                                  1,338</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">22.</td>
+                                <td width="154" class="commontext">Gujarat</td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> Gujarat<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> सौराष्ट्र
+                                  </td>
+                                <td width="77" class="commontext">1,107<br>
+                                  578</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">23.</td>
+                                <td width="154" class="commontext">गोवा</td>
+                                <td width="201" class="commontext">गोवा</td>
+                                <td width="77" class="commontext">3,005</td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF"> 
+                                <td width="25" class="commontext">24.</td>
+                                <td width="154" class="commontext"></td>
+                                <td width="201" class="commontext"><span class="bullet"><font color="#000000">n</font></span> 
+                                    महाराष्ट्र<br>
+                                  <span class="bullet"><font color="#000000">n</font></span>  
+                                  महाराष्ट्र<br>
+                                  <span class="bullet"><font color="#000000">n</font></span> <br>
+                                  <span class="bullet"><font color="#000000">n</font></span> </td>
+                                <td width="77" class="commontext">3,005<br>
+                                  901<br>
+                                  882<br>
+                                  1,034</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                <a href="https://mausam.imd.gov.in/imd_latest/contents/index_category.php" class="btn btn-primary" target="_blank">अपनी वर्षा को जानें</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <center>
+          <embed type="text/html" src="https://croprecommendapp.eu-gb.mybluemix.net/ui/#!/0?socketid=LUK5lw-W1WkRX2VrAAA1" width="500" height="600">
+        </center>
+        
+      </div>
+    </div>
+    <!-- Crop Recommendation Ends-->
+
+    <!-- Crop Production  -->
+    <div id="cropProduction" class="container">
+      <div class="jumbotron">
+        <h2>फसल उत्पादन भविष्यवाणी</h2>      
+          
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">फसल उत्पादकता</h2>
+                <p class="card-text">अपने कुल फसल उत्पादन की गणना करें।</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">क्षेत्र</h2>
+                <p class="card-text">सकल फसली क्षेत्र: यह एक विशेष वर्ष में एक बार और/या एक से अधिक बार बोए गए कुल क्षेत्रफल का प्रतिनिधित्व करता है, यानी क्षेत्र को एक वर्ष में जितनी बार बोया जाता है उतनी बार गिना जाता है</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">खेती का मौसम</h2>
+                <p class="card-text">अवधि जिसके लिए फसल का उत्पादन किया जाता है।</p>
+                
+                <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+                        अधिक जानिए
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal4">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h2>खेती का मौसम</h2>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <ol>
+                              <li>
+                                खरीफ<br>
+                                जून-अक्टूबर में बुवाई <br>
+                                सितंबर-अक्टूबर में फसल
+                              </li>
+
+                              <li>
+                                रबी <br>
+                                अक्टूबर-नवंबर में बुवाई <br>
+                                फरवरी-अप्रैल में फसल
+                              </li>
+                            </ol>
+
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <center>
+          <embed type="text/html" src="https://node-red-noddg-2021-08-13.eu-gb.mybluemix.net/ui/#!/0?socketid=U6pPVQqzBWmb-nRfAAAO" width="500" height="500">
+        </center>
+        
+      </div>
+    </div>
+    <!-- Crop Production  -->
+    
+    <!-- Contact -->
+    <div id="contact" class="container">
+      <div class="jumbotron">
+        <center><h2>Contact</h2></center>
+        <section class="w31-simple-contact-form1">
+          <div class="contact-form section-gap">
+            <div class="wrapper">
+              <div class="contact-form" style="max-width: 450px; margin:0 auto;">
+                <div class="form-mid">
+                  <form action="javascript:sendmail()" method="POST">
+                    <div class="FIELD">
+                      <input type="text" class="form-control" name="Name" id="Name" placeholder="नाम" required="">
+                    </div>
+  
+                    <div class="FIELD">
+                      <input type="email" class="form-control" name="Sender" id="Sender" placeholder="ईमेल" required="">
+                    </div>
+  
+                    <div class="FIELD">
+                      <input type="text" class="form-control" name="Subject" id="Subject" placeholder="विषय" required="">
+                    </div>
+  
+                      <textarea name="Message" class="form-control" name="Message" id="Message" placeholder="संदेश" required=""></textarea>
+                      <button type="submit" class="btn btn-contact bg-success">मेसेज भेजें</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Contact -->
+
+    <!-- footer -->
+    <nav class="navbar navbar-inverse fixed-bottom">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <p class="navbar-text">© Team Venom : Hack Challenge 2021 IBM-SmartInternz</p>
+    </nav>
+</body>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendmail(){
+    var name = $('#Name').val();
+    var email = $('#Sender').val();
+    var subject = $('#Subject').val();
+    var message = $('#Message').val();
+
+    var Body = 'Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+  }
+  Email.send({
+    Host : "smtp.gmail.com",
+    Username : "SI2021IBM04489@smartinternz.com",
+    Password : "SIIBM2021Uc45",
+    To : 'onkarcharkupalli@gmail.com',
+    From : "SI2021IBM04489@smartinternz.com",
+    Subject : "New Mail On Contact Form From "+name,
+    Body : Body
+}).then(
+  message => {
+    if(message == 'OK'){
+      alert("Your Email Has Been Sent.");
+    }else{
+      alert("Error in sending email.");
+    }
+  }
+);
+</script>
+</html>

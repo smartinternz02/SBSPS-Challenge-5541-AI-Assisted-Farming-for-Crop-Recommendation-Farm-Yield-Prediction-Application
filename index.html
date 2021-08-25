@@ -792,6 +792,21 @@
       </ul>
       <p class="navbar-text">© Team Venom : Hack Challenge 2021 IBM-SmartInternz</p>
     </nav>
+
+    <!-- Watson Assistant -->
+    <script>
+      window.watsonAssistantChatOptions = {
+          integrationID: "ad38c544-b690-458b-819c-867cf379dc14", // The ID of this integration.
+          region: "eu-gb", // The region your integration is hosted in.
+          serviceInstanceID: "d425d0df-88c0-46ff-a754-4972b19efe5b", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
 </body>
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -806,10 +821,10 @@
   }
   Email.send({
     Host : "smtp.gmail.com",
-    Username : "SI2021IBM04489@smartinternz.com",
-    Password : "SIIBM2021Uc45",
+    Username : "richierick9999@gmail.com",
+    Password : "Rick@9999",
     To : 'onkarcharkupalli@gmail.com',
-    From : "SI2021IBM04489@smartinternz.com",
+    From : "richierick9999@gmail.com",
     Subject : "New Mail On Contact Form From "+name,
     Body : Body
 }).then(

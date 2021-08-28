@@ -68,11 +68,11 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="https://wallpapercave.com/wp/wp1886331.jpg" alt="Carousel 1" style="width:100%;">
+              <img src="https://wallpapercave.com/wp/wp3471778.jpg" alt="Carousel 1" style="width:100%;">
             </div>
       
             <div class="item">
-              <img src="https://wallpapercave.com/wp/wp3471778.jpg" alt="Carousel 2" style="width:100%;">
+              <img src="https://wallpapercave.com/wp/wp1886331.jpg" alt="Carousel 2" style="width:100%;">
             </div>
           
             <div class="item">
@@ -708,33 +708,8 @@
     <!-- Contact -->
     <div id="contact" class="container">
       <div class="jumbotron">
-        <center><h2>Contact</h2></center>
-        <section class="w31-simple-contact-form1">
-          <div class="contact-form section-gap">
-            <div class="wrapper">
-              <div class="contact-form" style="max-width: 450px; margin:0 auto;">
-                <div class="form-mid">
-                  <form action="javascript:sendmail()" method="POST">
-                    <div class="FIELD">
-                      <input type="text" class="form-control" name="Name" id="Name" placeholder="नाम" required="">
-                    </div>
-  
-                    <div class="FIELD">
-                      <input type="email" class="form-control" name="Sender" id="Sender" placeholder="ईमेल" required="">
-                    </div>
-  
-                    <div class="FIELD">
-                      <input type="text" class="form-control" name="Subject" id="Subject" placeholder="विषय" required="">
-                    </div>
-  
-                      <textarea name="Message" class="form-control" name="Message" id="Message" placeholder="संदेश" required=""></textarea>
-                      <button type="submit" class="btn btn-contact bg-success">मेसेज भेजें</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <h2>Contact : </h2>
+        <h2>Email Us At : richierick9999@gmail.com</h2>
       </div>
     </div>
     <!-- Contact -->
@@ -762,33 +737,4 @@
       });
     </script>
 </body>
-
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-  function sendmail(){
-    var name = $('#Name').val();
-    var email = $('#Sender').val();
-    var subject = $('#Subject').val();
-    var message = $('#Message').val();
-
-    var Body = 'Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
-  }
-  Email.send({
-    Host : "smtp.gmail.com",
-    Username : "SI2021IBM04489@smartinternz.com",
-    Password : "SIIBM2021Uc45",
-    To : 'onkarcharkupalli@gmail.com',
-    From : "SI2021IBM04489@smartinternz.com",
-    Subject : "New Mail On Contact Form From "+name,
-    Body : Body
-}).then(
-  message => {
-    if(message == 'OK'){
-      alert("Your Email Has Been Sent.");
-    }else{
-      alert("Error in sending email.");
-    }
-  }
-);
-</script>
 </html>
